@@ -616,7 +616,7 @@ class Registration:
     def save_transform(self, path):
         d = {
             "A_moving_to_fixed": self.A.tolist(),
-            "convention": "column vectors [x, y, 1], 0-based pixel centres, maps day 2 (moving) to day 1 (fixed)",
+            "convention": "column vectors [x, y, 1], 0-based pixel centers, maps day 2 (moving) to day 1 (fixed)",
             "T_matlab_affine2d": affine_to_matlab(self.A).tolist(),
             "moving_points_xy": self.moving_pts.tolist(),
             "fixed_points_xy": self.fixed_pts.tolist(),
