@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regbrec"
+version = "1.0.0"
+description = "Register suite2p ROIs between recordings of the same field of view"
+authors = [{ name = "Dylan Martins", email = "dmartins@ucsb.edu" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-image",
+    "pyqtgraph",
+    "PyQt6",
+]
+
+[project.optional-dependencies]
+auto = ["opencv-python-headless"]
+test = ["pytest"]
+
+[project.scripts]
+regbrec = "regbrec.cli:main"
+regbrec-gui = "regbrec.gui:main"
+
+[tool.setuptools]
+packages = ["regbrec"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
